@@ -11,9 +11,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
-
-msg = fn.copy_src(src='h', out='m')
+def msg(edges):
+    return {'m': edges.src['h']}
 
 def reduce(nodes):
     accum = torch.cat((torch.mean(nodes.mailbox['m'], 1),torch.max(nodes.mailbox['m'],1)[0]),dim=1)

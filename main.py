@@ -17,7 +17,7 @@ import torch
 n = 30  # number of nodes
 p = 0.15 # edge probability
 env = MVC(n,p)
-cuda_flag = True
+cuda_flag = False
 alg = DiscreteActorCritic(env,cuda_flag)
 
 
