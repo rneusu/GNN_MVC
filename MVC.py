@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 31 22:01:56 2019
-
-@author: Or
-"""
-
 import dgl
 import torch
 import networkx as nx
