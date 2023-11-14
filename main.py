@@ -1,3 +1,5 @@
+import sys
+import os
 from discrete_actor_critic import DiscreteActorCritic
 from MVC import MVC
 import matplotlib.pyplot as plt
@@ -5,7 +7,6 @@ from smooth_signal import smooth
 import numpy as np
 import time
 import torch
-import os
 
 n = 30  # number of nodes
 p = 0.15 # edge probability
@@ -15,12 +16,14 @@ alg = DiscreteActorCritic(env,cuda_flag)
 
 num_episodes = int(input("Enter number of episodes: "))
 
+sys.stdout = open('output.txt','wt')
+
 for i in range(num_episodes):
     T1 = time.time()
     log = alg.train()
     T2 = time.time()
     print('Epoch: {}. R: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)))
-    
+    print('Epoch: {}. R: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)),file=open('output.txt','a'))
 
 Y = np.asarray(log.get_log('tot_return'))
 Y2 = smooth(Y)

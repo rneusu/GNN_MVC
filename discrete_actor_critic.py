@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Dec 30 16:20:39 2018
-
-@author: orrivlin
-"""
 import torch 
 import numpy as np
 import dgl
@@ -31,6 +25,8 @@ class DiscreteActorCritic:
         self.log.add_log('tot_return')
         self.log.add_log('TD_error')
         self.log.add_log('entropy')
+
+
         
     def run_episode(self):
         sum_r = 0
@@ -82,7 +78,7 @@ class DiscreteActorCritic:
         self.optimizer.step()
         self.log.add_item('TD_error',L_value.detach().item())
         self.log.add_item('entropy',L_entropy.cpu().detach().item())
-        
+    
     
     def train(self):
         mean_return = 0
@@ -96,9 +92,10 @@ class DiscreteActorCritic:
             else:
                 PI = torch.cat([PI,pi],dim=0)
                 R = torch.cat([R,r],dim=0)
+
+
                 V = torch.cat([V,v],dim=0)
                 
         mean_return = mean_return/self.num_episodes
         self.update_model(PI,R,V)
         return self.log
-        

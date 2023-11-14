@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr  4 10:28:50 2019
-
-@author: orrivlin
-"""
-
 import dgl
 import dgl.function as fn
 import torch
@@ -22,7 +15,7 @@ class NodeApplyModule(nn.Module):
     def __init__(self, in_feats, out_feats, activation):
         super(NodeApplyModule, self).__init__()
         self.linear = nn.Linear(3*in_feats, out_feats)
-        self.activation = activation
+        self.activation = activation        
 
     def forward(self, node):
         h = self.linear(torch.cat((node.data['h'],node.data['hm']),dim=1))
@@ -64,3 +57,4 @@ class ACNet(nn.Module):
         g.ndata.pop('h')
         return PI, V
     
+
