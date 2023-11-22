@@ -16,14 +16,15 @@ alg = DiscreteActorCritic(env,cuda_flag)
 
 num_episodes = int(input("Enter number of episodes: "))
 
-sys.stdout = open('output.txt','wt')
+print('hey', file=open('output/output.txt','w'))
+print(f'env.g: {env.init_state.g}', file=open('output/output.txt','a'))
 
 for i in range(num_episodes):
+    #print('Epoch: {}'.format(i))
     T1 = time.time()
     log = alg.train()
     T2 = time.time()
-    print('Epoch: {}. R: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)))
-    print('Epoch: {}. R: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)),file=open('output.txt','a'))
+    print('Epoch: {}. total_return: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)),file=open('output/output2.txt','a'))
 
 Y = np.asarray(log.get_log('tot_return'))
 Y2 = smooth(Y)
@@ -59,9 +60,7 @@ fig2.savefig('figures/episode_return.png')
 fig3.savefig('figures/mean_TD_error.png')
 fig4.savefig('figures/mean_entropy.png')
 
-plt.show()
+#plt.show()
 
 PATH = 'mvc_net.pt'
 torch.save(alg.model.state_dict(),PATH)
-
-

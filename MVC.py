@@ -13,6 +13,12 @@ class State:
 def init_state(N,P):
     g = nx.fast_gnp_random_graph(N,P)
     g = dgl.DGLGraph(g)
+    # Print vertices
+    print("Vertices:", g.nodes())
+        
+    # Print edges
+    print("Edges:", g.edges())
+    
     norm_card = torch.Tensor(np.array(g.in_degrees() + g.out_degrees())/g.number_of_nodes()).unsqueeze(-1)
     g.ndata['x'] = torch.cat((torch.zeros((N,1)),norm_card),dim=1)
     visited = torch.zeros((1,N)).squeeze()

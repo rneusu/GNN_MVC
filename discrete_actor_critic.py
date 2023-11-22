@@ -33,6 +33,7 @@ class DiscreteActorCritic:
         state, done = self.problem.reset()
         [idx1,idx2] = self.problem.get_ilegal_actions(state)
         t = 0
+        
         while done == False:
             G = dc(state.g)
             if self.cuda:
@@ -57,6 +58,8 @@ class DiscreteActorCritic:
                 PI = torch.cat([PI,pi[action].unsqueeze(0)],dim=0)
                 R = torch.cat([R,reward.unsqueeze(0)],dim=0)
                 V = torch.cat([V,val.unsqueeze(0)],dim=0)
+
+        print(f'state.visited: {state.visited}',file=open('output/output.txt','a'))
         self.log.add_item('tot_return',sum_r.item())
         tot_return = R.sum().item()
         for i in range(R.shape[0] - 1):

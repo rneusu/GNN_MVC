@@ -14,11 +14,10 @@ import time
 from copy import deepcopy as dc
 import matplotlib.pyplot as plt
 import networkx as nx
+import numpy as np
 
-
-
-cuda_flag = True
-num_nodes = 40
+cuda_flag = False
+num_nodes = 30
 p_edge = 0.15
 mvc = MVC(num_nodes,p_edge)
 ndim = mvc.get_graph_dims()
@@ -27,6 +26,7 @@ if cuda_flag:
     NN = ACNet(ndim,264,1).cuda()
 else:
     NN = ACNet(ndim,264,1)
+
 PATH = 'mvc_net.pt'
 NN.load_state_dict(torch.load(PATH))
 
@@ -55,6 +55,8 @@ while done == False:
 T2 = time.time()
 
 node_tag = state.g.ndata['x'][:,0].cpu().squeeze().numpy().tolist()
+print('GNN: {}'.format(sum_r.item()), file=open('output/test_result.txt','a'))
+
 nx.draw(state.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
 plt.show()
 
@@ -81,7 +83,9 @@ while done == False:
 T2 = time.time()
 
 node_tag = state.g.ndata['x'][:,0].cpu().squeeze().numpy().tolist()
+print('Heuristic: {}'.format(sum_r2.item()), file=open('output/test_result.txt','a'))
+
 nx.draw(state.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
 plt.show()
 
-print('Ratio: {}'.format((sum_r/sum_r2).item()))
+#print('Ratio: {}'.format((sum_r/sum_r2).item()))
