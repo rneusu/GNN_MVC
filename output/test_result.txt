@@ -1,4 +1,32 @@
-GNN: -29.0
+GNN: -20.0
 Heuristic: -24.0
-GNN: -27.0
-Heuristic: -26.0
+Local Search: 19
+GTL: 18
+GNN: -35.0
+Heuristic: -45.0
+Local Search: 37
+GTL: 36
+GNN: -35.0
+Heuristic: -39.0
+Local Search: 37
+GTL: 35
+GNN: -37.0
+Heuristic: -47.0
+Local Search: 37
+GTL: 36
+GNN: -32.0
+Heuristic: -43.0
+Local Search: 34
+GTL: 34
+GNN: -35.0
+Heuristic: -42.0
+Local Search: 36
+GTL: 34
+GNN: -35.0
+Heuristic: -42.0
+Local Search: 33
+GTL: 33
+GNN: -37.0
+Heuristic: -44.0
+Local Search: 35
+GTL: 37

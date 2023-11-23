@@ -7,3 +7,8 @@ Epoch: 4. total_return: -28.0. TD error: 11.354. H: 0.193. T: 5.122
 Epoch: 5. total_return: -28.0. TD error: 11.277. H: 0.194. T: 4.142
 Epoch: 6. total_return: -25.0. TD error: 10.096. H: 0.176. T: 3.41
 Epoch: 7. total_return: -29.0. TD error: 11.424. H: 0.199. T: 4.021
+Epoch: 0. total_return: -26.0. TD error: 10.97. H: 0.181. T: 4.069
+Epoch: 1. total_return: -29.0. TD error: 11.931. H: 0.199. T: 4.494
+Epoch: 0. total_return: -25.0. TD error: 10.614. H: 0.175. T: 1.827
+Epoch: 1. total_return: -28.0. TD error: 11.551. H: 0.194. T: 2.141
+Epoch: 2. total_return: -26.0. TD error: 10.741. H: 0.181. T: 1.797

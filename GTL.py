@@ -21,7 +21,7 @@ bests = []
 best = float('inf')
 start = time.time()
 
-def LOCALSEARCH(state):
+def GTL(state):
     class weighted_edge:
         def __init__(self, nod1, nod2, w):
             self.nod1 = nod1
@@ -72,7 +72,6 @@ def LOCALSEARCH(state):
         return tmp
     
     def make_vertex_cover(cur):
-        print(state.visited)
         for i in edge:
             if not cur.vec[i[0]] and not cur.vec[i[1]]:
                 if random_num() % 2 == 1:
@@ -150,8 +149,9 @@ def LOCALSEARCH(state):
             while array_pointer < siz and time_array[array_pointer] <= time_now:
                 ans_array.append(current_weight)
                 array_pointer += 1
-                print(f"{time_array[array_pointer - 1]}\t\t{ans_array[array_pointer - 1]}")            
+                print(f"{time_array[array_pointer - 1]}\t\t{ans_array[array_pointer - 1]}")
             
+                        
             if(previous_weight > current_weight):
                 print((time.time() - start), calculate_weight(C))
 
@@ -180,12 +180,13 @@ def LOCALSEARCH(state):
         bests.append(calculate_weight(C))
 
         for time_val, ans_val in zip(time_array, ans_array):
-            print(f"{time_val}\t\t{ans_val}", file=open('output/ls_result.txt','a'))
+            print(f"{time_val}\t\t{ans_val}", file=open('output/GTL_result.txt','a'))
 
 
     input()
     local_search()
-    print(f"the result is: {bests[0]}", file=open('output/ls_result.txt','a'))
+    print(f"the result is: {bests[0]}", file=open('output/GTL_result.txt','a'))
     print("the result is:", bests[0])
     print("it took", time.time() - start, "seconds")
+
     return bests[0]
