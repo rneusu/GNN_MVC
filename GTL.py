@@ -7,7 +7,7 @@ V = 0
 E = 0
 all = 0
 cll = 0
-cnt = 0
+cnt = 3
 bll = 0.0
 num_generations = 0
 pop_size = 0
@@ -61,8 +61,6 @@ def GTL(state):
             tmp = weighted_edge(all, cll, 1)
             edge_w.append(tmp)
         
-        cnt = 20
-
     def generate_random_individual():
         tmp = individual([], 0)
         for i in range(V):
@@ -72,12 +70,10 @@ def GTL(state):
         return tmp
     
     def make_vertex_cover(cur):
-        for i in edge:
-            if not cur.vec[i[0]] and not cur.vec[i[1]]:
-                if random_num() % 2 == 1:
-                    cur.vec[i[0]] = 1
-                else:
-                    cur.vec[i[1]] = 1
+        print(state.visited)
+        size = len(cur.vec)
+        for i in range(size):
+            cur.vec[i] = int(state.visited[ i])
         return cur
 
     def check_vertex_cover(cur):
@@ -132,9 +128,7 @@ def GTL(state):
     def local_search():
         global bests
         C = generate_random_individual()
-        print("ALIVE1", len(C.vec))
         C = make_vertex_cover(C)
-        print("ALIVE2")
         score_matrix = calculate_score(C)
         start = time.time()
         array_pointer = 0

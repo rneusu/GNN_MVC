@@ -30,3 +30,47 @@ GNN: -37.0
 Heuristic: -44.0
 Local Search: 35
 GTL: 37
+GTL: 36
+GNN: -33.0
+Heuristic: -39.0
+Local Search: 32
+GTL: 31
+GNN: -37.0
+Heuristic: -41.0
+Local Search: 34
+GTL: 36
+GNN: -34.0
+Heuristic: -39.0
+Local Search: 32
+GTL: 32
+GNN: -38.0
+Heuristic: -46.0
+Local Search: 35
+GTL: 34
+GNN: -37.0
+Heuristic: -42.0
+Local Search: 35
+GTL: 34
+GNN: -33.0
+Heuristic: -40.0
+GNN: -35.0
+Heuristic: -38.0
+Local Search: 31
+GTL: 34
+GNN: -34.0
+Heuristic: -44.0
+Local Search: 31
+GNN: -35.0
+Heuristic: -41.0
+Local Search: 34
+GTL: 34
+GNN: -36.0
+Heuristic: -45.0
+Local Search: 34
+GTL: 34
+GNN: -35.0
+Heuristic: -45.0
+Local Search: 34
+GTL: 34
+GNN: -36.0
+Heuristic: -43.0
