@@ -47,6 +47,7 @@ def input():
             all, bll = inp.readline().split()
             all = int(all)
             bll = float(bll)
+            bll = 1
             weight.append(bll)
         for i in range(E):
             all, cll = map(int, inp.readline().split())
@@ -55,7 +56,7 @@ def input():
             edge_w.append(tmp)
         num_generations, pop_size, crossover_prob, mutation_prob = map(int, inp.readline().split())
         cnt = int(inp.readline())
-        cnt = 15
+        cnt = 100
 
 def generate_random_individual():
     tmp = individual([], 0)
@@ -154,5 +155,6 @@ def local_search():
 
 input()
 local_search()
+print(f"the result is: {bests[0]}", file=open('output/test_result.txt','a'))
 print("the result is:", bests[0])
 print("it took", time.time() - start, "seconds")

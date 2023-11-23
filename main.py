@@ -14,7 +14,7 @@ env = MVC(n,p)
 cuda_flag = False
 alg = DiscreteActorCritic(env,cuda_flag)
 
-num_episodes = int(input("Enter number of episodes: "))
+num_episodes = 4000
 
 print('hey', file=open('output/output.txt','w'))
 print(f'env.g: {env.init_state.g}', file=open('output/output.txt','a'))
