@@ -20,7 +20,6 @@ print('hey', file=open('output/output.txt','w'))
 print(f'env.g: {env.init_state.g}', file=open('output/output.txt','a'))
 
 for i in range(num_episodes):
-    #print('Epoch: {}'.format(i))
     T1 = time.time()
     log = alg.train()
     T2 = time.time()

@@ -15,12 +15,16 @@ from copy import deepcopy as dc
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+from local_search import LOCALSEARCH
+
+
 
 cuda_flag = False
-num_nodes = 30
+num_nodes = 1000
 p_edge = 0.15
 mvc = MVC(num_nodes,p_edge)
 ndim = mvc.get_graph_dims()
+
 
 if cuda_flag:
     NN = ACNet(ndim,264,1).cuda()
@@ -33,6 +37,7 @@ NN.load_state_dict(torch.load(PATH))
 init_state,done = mvc.reset()
 pos = nx.spring_layout(init_state.g.to_networkx(), iterations=20)
 
+'''
 #### GCN Policy
 state = dc(init_state)
 if cuda_flag:
@@ -62,7 +67,7 @@ plt.show()
 
 
 
-### Heuristic Policy
+### Greedy Policy
 state = dc(init_state)
 done = False
 sum_r2 = 0
@@ -89,3 +94,9 @@ nx.draw(state.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
 plt.show()
 
 #print('Ratio: {}'.format((sum_r/sum_r2).item()))
+
+'''
+
+#Local Search ~~
+
+LOCALSEARCH(mvc)

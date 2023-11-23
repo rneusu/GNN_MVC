@@ -1,0 +1,4 @@
+GNN: -29.0
+Heuristic: -24.0
+GNN: -27.0
+Heuristic: -26.0

@@ -1,10 +1,9 @@
-Epoch: 0. total_return: -27.0. TD error: 11.314. H: 0.187. T: 2.417
-Epoch: 1. total_return: -27.0. TD error: 11.176. H: 0.187. T: 1.584
-Epoch: 2. total_return: -27.0. TD error: 11.051. H: 0.187. T: 1.743
-Epoch: 3. total_return: -26.0. TD error: 10.571. H: 0.181. T: 1.603
-Epoch: 4. total_return: -28.0. TD error: 11.12. H: 0.194. T: 2.113
-Epoch: 5. total_return: -26.0. TD error: 10.287. H: 0.184. T: 1.925
-Epoch: 6. total_return: -26.0. TD error: 10.113. H: 0.181. T: 1.683
-Epoch: 7. total_return: -28.0. TD error: 10.624. H: 0.193. T: 2.017
-Epoch: 8. total_return: -26.0. TD error: 9.726. H: 0.18. T: 1.841
-Epoch: 9. total_return: -26.0. TD error: 9.451. H: 0.181. T: 1.943
+
+Epoch: 0. total_return: -27.0. TD error: 11.353. H: 0.187. T: 4.842
+Epoch: 1. total_return: -28.0. TD error: 11.612. H: 0.194. T: 3.848
+Epoch: 2. total_return: -29.0. TD error: 11.873. H: 0.199. T: 4.827
+Epoch: 3. total_return: -27.0. TD error: 11.107. H: 0.187. T: 4.623
+Epoch: 4. total_return: -28.0. TD error: 11.354. H: 0.193. T: 5.122
+Epoch: 5. total_return: -28.0. TD error: 11.277. H: 0.194. T: 4.142
+Epoch: 6. total_return: -25.0. TD error: 10.096. H: 0.176. T: 3.41
+Epoch: 7. total_return: -29.0. TD error: 11.424. H: 0.199. T: 4.021
