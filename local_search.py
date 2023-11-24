@@ -43,12 +43,11 @@ def LOCALSEARCH(state):
         return ret
     
     def input():
-        global V, E, all, bll, cll, num_generations, pop_size, crossover_prob, mutation_prob, cnt
+        print("Local Search Algorithm running")
+        global V, E, all, bll, cll, num_generations, pop_size, crossover_prob, mutation_prob, cnt, bests
+        bests = []
         vertices = state.g.nodes()
         edges = state.g.edges()
-        print(f'init_state: {state.g}')
-        print(f'vertices: {vertices}')
-        print(f'edges: {edges}')
         V = len(vertices)
         E = len(edges[0])
         for i in range(V):
@@ -70,10 +69,12 @@ def LOCALSEARCH(state):
         return tmp
     
     def make_vertex_cover(cur):
-        print(state.visited)
-        size = len(cur.vec)
-        for i in range(size):
-            cur.vec[i] = int(state.visited[i])
+        for i in edge:
+            if not cur.vec[i[0]] and not cur.vec[i[1]]:
+                if random_num() % 2 == 1:
+                    cur.vec[i[0]] = 1
+                else:
+                    cur.vec[i[1]] = 1
         return cur
 
     def check_vertex_cover(cur):

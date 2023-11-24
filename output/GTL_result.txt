@@ -304,3 +304,75 @@ the result is: 34
 1		42
 2		42
 the result is: 34
+1		33
+2		33
+the result is: 33
+1		33
+2		33
+the result is: 33
+1		33
+2		33
+the result is: 33
+1		39
+2		39
+the result is: 33
+1		44
+2		44
+the result is: 33
+1		44
+2		44
+the result is: 33
+1		45
+2		45
+the result is: 33
+1		46
+2		46
+the result is: 33
+1		47
+2		47
+the result is: 33
+1		47
+2		47
+the result is: 33
+1		34
+2		34
+the result is: 34
+1		32
+2		32
+the result is: 32
+1		36
+2		36
+3		36
+the result is: 36
+1		37
+2		37
+3		37
+the result is: 37
+1		82
+2		82
+the result is: 82
+1		83
+2		83
+the result is: 83
+1		85
+2		85
+the result is: 85
+1		83
+2		83
+the result is: 83
+1		82
+2		82
+the result is: 82
+1		83
+2		83
+the result is: 83
+1		81
+2		81
+3		81
+the result is: 81
+1		85
+2		85
+the result is: 85
+1		84
+2		84
+the result is: 84

@@ -20,7 +20,7 @@ from GTL import GTL
 
 
 cuda_flag = False
-num_nodes = 50
+num_nodes = 100
 p_edge = 0.15
 
 def f():
@@ -114,14 +114,16 @@ def f():
 
     return sum_r.item(), sum_r2.item(), result_local_search, result_GTL
 
+
 avg_GNN = 0
 avg_Heuristic = 0
 avg_LocalSearch = 0
 avg_GTL = 0
 
-iterations = 10
+iterations = 1
 
 for i in range(iterations):
+    print(f'Iteration {i+1}/{iterations}', file=open('output/test_result.txt','a'))
     a,b,c,d = f()
     avg_GNN += a
     avg_Heuristic += b
