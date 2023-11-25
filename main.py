@@ -14,16 +14,14 @@ env = MVC(n,p)
 cuda_flag = False
 alg = DiscreteActorCritic(env,cuda_flag)
 
-num_episodes = 4000
-
-print('hey', file=open('output/output.txt','w'))
-print(f'env.g: {env.init_state.g}', file=open('output/output.txt','a'))
+num_episodes = 200
 
 for i in range(num_episodes):
     T1 = time.time()
     log = alg.train()
     T2 = time.time()
     print('Epoch: {}. total_return: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)),file=open('output/output2.txt','a'))
+    print('Epoch: {}. total_return: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)))
 
 Y = np.asarray(log.get_log('tot_return'))
 Y2 = smooth(Y)

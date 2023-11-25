@@ -20,8 +20,8 @@ from GTL import GTL
 
 
 cuda_flag = False
-num_nodes = 100
-p_edge = 0.15
+num_nodes = 30
+p_edge = 0.05
 
 def f():
     mvc = MVC(num_nodes,p_edge)
@@ -67,7 +67,9 @@ def f():
     T2 = time.time()
 
     node_tag = state.g.ndata['x'][:,0].cpu().squeeze().numpy().tolist()
-    print('GNN: {}'.format(sum_r.item()), file=open('output/test_result.txt','a'))
+
+    result_GTL = -sum_r.item()
+    print('GNN: {}'.format(result_GTL), file=open('output/test_result.txt','a'))
 
     nx.draw(state.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
     plt.savefig('figures/graph_GCN.png')
@@ -94,8 +96,9 @@ def f():
         sum_r2 += reward
     T2 = time.time()
 
+    result_heuristic = -sum_r2.item()
     node_tag = state_greedy.g.ndata['x'][:,0].cpu().squeeze().numpy().tolist()
-    print('Heuristic: {}'.format(sum_r2.item()), file=open('output/test_result.txt','a'))
+    print('Heuristic: {}'.format(result_heuristic), file=open('output/test_result.txt','a'))
 
     nx.draw(state_greedy.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
     plt.savefig('figures/graph_GCN.png')
@@ -106,13 +109,13 @@ def f():
     #Local Search ~~
 
     result_local_search = LOCALSEARCH(state_greedy)
-    print('Local Search: {}'.format(result_local_search), file=open('output/test_result.txt','a'))
+    print('Local Search: {}'.format(min(result_local_search, result_heuristic)), file=open('output/test_result.txt','a'))
 
 
     result_GTL = GTL(state)
-    print('GTL: {}'.format(result_GTL), file=open('output/test_result.txt','a'))
+    print('GTL: {}'.format(min(result_GTL,result_GTL)), file=open('output/test_result.txt','a'))
 
-    return sum_r.item(), sum_r2.item(), result_local_search, result_GTL
+    return result_GTL, result_heuristic, result_local_search, result_GTL
 
 
 avg_GNN = 0
@@ -120,15 +123,15 @@ avg_Heuristic = 0
 avg_LocalSearch = 0
 avg_GTL = 0
 
-iterations = 1
+iterations = 50
 
 for i in range(iterations):
     print(f'Iteration {i+1}/{iterations}', file=open('output/test_result.txt','a'))
     a,b,c,d = f()
     avg_GNN += a
     avg_Heuristic += b
-    avg_LocalSearch += c
-    avg_GTL += d
+    avg_LocalSearch += min(c, b)
+    avg_GTL += min(d, a)
 
 avg_GNN /= iterations
 avg_Heuristic /= iterations

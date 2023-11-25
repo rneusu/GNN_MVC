@@ -186,8 +186,8 @@ def GTL(state):
 
     input()
     local_search()
-    print(f"the result is: {bests[0]}", file=open('output/GTL_result.txt','a'))
-    print("the result is:", bests[0])
+    print(f"the result is: {min(bests)}", file=open('output/GTL_result.txt','a'))
+    print("the result is:", min(bests))
     print("it took", time.time() - start, "seconds")
 
-    return bests[0]
+    return min(bests)
