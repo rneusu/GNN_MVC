@@ -33,7 +33,7 @@ def f():
     else:
         NN = ACNet(ndim,264,1)
 
-    PATH = 'mvc_net.pt'
+    PATH = 'models/mvc_net_1000.pt'
     NN.load_state_dict(torch.load(PATH))
 
     init_state,done = mvc.reset()
@@ -68,8 +68,8 @@ def f():
 
     node_tag = state.g.ndata['x'][:,0].cpu().squeeze().numpy().tolist()
 
-    result_GTL = -sum_r.item()
-    print('GNN: {}'.format(result_GTL), file=open('output/test_result.txt','a'))
+    result_GCN = -sum_r.item()
+    print('GNN: {}'.format(result_GCN), file=open('output/test_result.txt','a'))
 
     nx.draw(state.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
     plt.savefig('figures/graph_GCN.png')
@@ -113,9 +113,9 @@ def f():
 
 
     result_GTL = GTL(state)
-    print('GTL: {}'.format(min(result_GTL,result_GTL)), file=open('output/test_result.txt','a'))
+    print('GTL: {}'.format(result_GTL), file=open('output/test_result.txt','a'))
 
-    return result_GTL, result_heuristic, result_local_search, result_GTL
+    return result_GCN, result_heuristic, result_local_search, result_GTL
 
 
 avg_GNN = 0
@@ -123,7 +123,7 @@ avg_Heuristic = 0
 avg_LocalSearch = 0
 avg_GTL = 0
 
-iterations = 50
+iterations = 10
 
 for i in range(iterations):
     print(f'Iteration {i+1}/{iterations}', file=open('output/test_result.txt','a'))

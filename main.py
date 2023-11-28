@@ -8,22 +8,21 @@ import numpy as np
 import time
 import torch
 
-n = 30  # number of nodes
-p = 0.15 # edge probability
+n = 100  # number of nodes
+p = 0.1 # edge probability
 env = MVC(n,p)
 cuda_flag = False
 alg = DiscreteActorCritic(env,cuda_flag)
 
-num_episodes = 200
+num_episodes = 4000
 
 for i in range(num_episodes):
     T1 = time.time()
     log = alg.train()
     T2 = time.time()
     print('Epoch: {}. total_return: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)),file=open('output/output2.txt','a'))
-    print('Epoch: {}. total_return: {}. TD error: {}. H: {}. T: {}'.format(i,np.round(log.get_current('tot_return'),2),np.round(log.get_current('TD_error'),3),np.round(log.get_current('entropy'),3),np.round(T2-T1,3)))
 
-Y = np.asarray(log.get_log('tot_return'))
+Y = np.asarray(log. et_log('tot_return'))
 Y2 = smooth(Y)
 x = np.linspace(0, len(Y), len(Y))  
 fig2 = plt.figure()
@@ -59,5 +58,5 @@ fig4.savefig('figures/mean_entropy.png')
 
 #plt.show()
 
-PATH = 'mvc_net.pt'
+PATH = 'models\mvc_net_100_4000.pt'
 torch.save(alg.model.state_dict(),PATH)

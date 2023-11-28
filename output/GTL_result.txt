@@ -1,0 +1,138 @@
+the result is: 14
+1		15
+2		15
+the result is: 15
+the result is: 16
+1		16
+2		16
+the result is: 15
+the result is: 18
+1		19
+2		19
+the result is: 15
+the result is: 18
+1		19
+2		19
+the result is: 15
+the result is: 20
+1		20
+2		20
+the result is: 15
+the result is: 22
+1		22
+2		22
+3		22
+the result is: 15
+the result is: 23
+1		23
+2		23
+the result is: 15
+the result is: 24
+1		23
+2		23
+the result is: 15
+the result is: 24
+1		24
+2		24
+3		24
+the result is: 15
+the result is: 24
+1		24
+2		24
+the result is: 15
+the result is: 16
+1		12
+2		12
+3		12
+the result is: 12
+the result is: 18
+1		16
+2		16
+the result is: 12
+the result is: 18
+1		17
+2		17
+the result is: 12
+the result is: 21
+the result is: 11
+1		10
+2		10
+the result is: 10
+the result is: 15
+1		17
+2		17
+the result is: 10
+the result is: 17
+1		17
+2		17
+the result is: 10
+the result is: 20
+1		19
+2		19
+the result is: 10
+the result is: 20
+1		21
+2		21
+the result is: 10
+the result is: 23
+1		21
+2		21
+the result is: 10
+the result is: 20
+1		22
+2		22
+the result is: 10
+the result is: 22
+1		21
+2		21
+the result is: 10
+the result is: 24
+1		24
+2		24
+the result is: 10
+the result is: 26
+1		24
+2		24
+the result is: 10
+the result is: 13
+1		13
+2		13
+the result is: 13
+the result is: 19
+1		18
+2		18
+the result is: 13
+the result is: 20
+1		18
+2		18
+3		18
+the result is: 13
+the result is: 19
+1		20
+2		20
+the result is: 13
+the result is: 23
+1		23
+2		23
+the result is: 13
+the result is: 23
+1		23
+2		23
+the result is: 13
+the result is: 22
+1		24
+2		24
+the result is: 13
+the result is: 24
+1		23
+2		23
+the result is: 13
+the result is: 24
+1		25
+2		25
+3		25
+the result is: 13
+the result is: 24
+1		25
+2		25
+the result is: 13
