@@ -1,182 +1,77 @@
 Iteration 1/10
-GNN: 20.0
-Heuristic: 20.0
+GNN: 988.0
+Heuristic: 994.0
+Local Search: 988
+GTL: 987
+Iteration 2/10
+Iteration 1/10
+GNN: 981.0
+Heuristic: 996.0
+Local Search: 992
+GTL: 980
+Iteration 2/10
+GNN: 989.0
+Heuristic: 994.0
+Local Search: 992
+GTL: 980
+Iteration 3/10
+GNN: 986.0
+Iteration 1/3
+GNN: 986.0
+Heuristic: 989.0
+Iteration 1/3
+GNN: 21.0
+Heuristic: 19.0
 Local Search: 14
 GTL: 15
-Iteration 2/10
-GNN: 16.0
-Heuristic: 17.0
-Local Search: 16
-GTL: 15
-Iteration 3/10
+Iteration 2/3
 GNN: 19.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 15
-Iteration 4/10
-GNN: 15.0
-Heuristic: 13.0
-Local Search: 13.0
-GTL: 15
-Iteration 5/10
-GNN: 13.0
-Heuristic: 13.0
-Local Search: 13.0
-GTL: 15
-Iteration 6/10
-GNN: 15.0
+Heuristic: 27.0
+Local Search: 14
+Iteration 1/3
+GNN: 16.0
 Heuristic: 17.0
-Local Search: 17.0
-GTL: 15
-Iteration 7/10
-GNN: 16.0
-Heuristic: 15.0
-Local Search: 15.0
-GTL: 15
-Iteration 8/10
-GNN: 17.0
-Heuristic: 17.0
-Local Search: 17.0
-GTL: 15
-Iteration 9/10
-GNN: 18.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 15
-Iteration 10/10
-GNN: 20.0
-Heuristic: 19.0
-Local Search: 19.0
-GTL: 15
-Average GNN: 15.0
-Average Heuristic: 16.3
-Average Local Search: 15.6
-Average GTL: 15.0
-Iteration 1/10
-Iteration 1/10
-GNN: 20.0
-Heuristic: 15.0
-Local Search: 15.0
-GTL: 12
-Iteration 2/10
-GNN: 14.0
-Heuristic: 15.0
-Local Search: 15.0
-GTL: 12
-Iteration 3/10
-GNN: 22.0
-Heuristic: 17.0
-Local Search: 17.0
-GTL: 12
-Iteration 4/10
-GNN: 14.0
-Heuristic: 17.0
-Local Search: 17.0
-Iteration 1/10
-GNN: 18.0
-Heuristic: 13.0
-Local Search: 11
-GTL: 10
-Iteration 2/10
-GNN: 16.0
-Heuristic: 12.0
-Local Search: 12.0
-GTL: 10
-Iteration 3/10
-GNN: 18.0
-Heuristic: 19.0
-Local Search: 17
-GTL: 10
-Iteration 4/10
-GNN: 16.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 10
-Iteration 5/10
-GNN: 16.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 10
-Iteration 6/10
-GNN: 22.0
-Heuristic: 10.0
-Local Search: 10.0
-GTL: 10
-Iteration 7/10
-GNN: 16.0
-Heuristic: 21.0
-Local Search: 20
-GTL: 10
-Iteration 8/10
-GNN: 16.0
-Heuristic: 20.0
-Local Search: 20.0
-GTL: 10
-Iteration 9/10
-GNN: 17.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 10
-Iteration 10/10
-GNN: 12.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 10
-Average GNN: 16.7
-Average Heuristic: 15.9
-Average Local Search: 15.4
-Average GTL: 10.0
-Iteration 1/10
-GNN: 19.0
+Local Search: 13
+GTL: 14
+Iteration 2/3
+GNN: 21.0
+Heuristic: 18.0
+Local Search: 14
+GTL: 17
+Iteration 3/3
+GNN: 21.0
 Heuristic: 23.0
 Local Search: 13
-GTL: 13
-Iteration 2/10
-GNN: 14.0
-Heuristic: 14.0
-Local Search: 14.0
-GTL: 13
-Iteration 3/10
-GNN: 16.0
-Heuristic: 13.0
-Local Search: 13.0
-GTL: 13
-Iteration 4/10
-GNN: 20.0
-Heuristic: 18.0
-Local Search: 18.0
-GTL: 13
-Iteration 5/10
-GNN: 14.0
-Heuristic: 16.0
-Local Search: 16.0
-GTL: 13
-Iteration 6/10
-GNN: 18.0
-Heuristic: 15.0
-Local Search: 15.0
-GTL: 13
-Iteration 7/10
-GNN: 23.0
-Heuristic: 14.0
-Local Search: 14.0
-GTL: 13
-Iteration 8/10
-GNN: 13.0
-Heuristic: 11.0
-Local Search: 11.0
-GTL: 13
-Iteration 9/10
-GNN: 15.0
-Heuristic: 21.0
-Local Search: 21.0
-GTL: 13
-Iteration 10/10
-GNN: 12.0
-Heuristic: 11.0
-Local Search: 11.0
-GTL: 13
-Average GNN: 16.4
-Average Heuristic: 15.6
-Average Local Search: 14.6
-Average GTL: 12.9
+GTL: 16
+Average GNN: 19.333333333333332
+Average Heuristic: 19.333333333333332
+Average Local Search: 13.333333333333334
+Average GTL: 15.666666666666666
+STD GNN: 2.886751345948129
+STD Heuristic: 3.2145502536643185
+STD Local Search: 0.5773502691896257
+STD GTL: 1.5275252316519468
+Iteration 1/3
+GNN: 990.0
+Heuristic: 994.0
+Local Search: 988
+GTL: 990
+Iteration 2/3
+GNN: 978.0
+Heuristic: 991.0
+Local Search: 983
+GTL: 974
+Iteration 3/3
+GNN: 982.0
+Heuristic: 999.0
+Local Search: 989
+GTL: 982
+Average GNN: 983.3333333333334
+Average Heuristic: 994.6666666666666
+Average Local Search: 986.6666666666666
+Average GTL: 982.0
+STD GNN: 6.110100926607787
+STD Heuristic: 4.041451884327381
+STD Local Search: 3.214550253664318
+STD GTL: 8.0
+Iteration 1/3

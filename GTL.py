@@ -7,7 +7,7 @@ V = 0
 E = 0
 all = 0
 cll = 0
-cnt = 3
+cnt = 5
 bll = 0.0
 num_generations = 0
 pop_size = 0
@@ -36,10 +36,6 @@ def GTL(state):
 
     def random_num():
         ret = random.randint(0, 2**64)
-        ret *= random.randint(0, 2**64)
-        ret += random.randint(0, 2**64)
-        ret *= random.randint(0, 2**64)
-        ret = abs(ret)
         return ret
     
     def input():
@@ -68,25 +64,26 @@ def GTL(state):
         print("FFFF", len(tmp.vec))
         return tmp
     
-    def make_vertex_cover(cur):
+    def make_vertex_cover():
+        tmp = individual([], 0)
         print(state.visited)
-        size = len(cur.vec)
+        size = V
         for i in range(size):
-            cur.vec[i] = int(state.visited[ i])
-        return cur
+            tmp.vec.append(int(state.visited[i]))
+        return tmp
 
     def check_vertex_cover(cur):
         for i in edge:
-            if not cur.vec[i[0]] and not cur.vec[i[1]]:
+            if cur.vec[i[0]] == 0 and cur.vec[i[1]] == 0:
                 return False
         return True
 
     def calculate_cost(cur):
         ret = 0
         for i in edge_w:
-            if not cur.vec[i.nod1] and not cur.vec[i.nod2]:
+            if cur.vec[i.nod1] == 0 and cur.vec[i.nod2] == 0:
                 ret += i.w
-                i.w += 1
+                #i.w += 1 #Why is this here?
         return ret
 
     def calculate_weight(cur):
@@ -126,9 +123,7 @@ def GTL(state):
 
     def local_search():
         global bests
-        C = generate_random_individual()
-        print("debug_1")
-        C = make_vertex_cover(C)
+        C = make_vertex_cover()
         print("debug_2")
         score_matrix = calculate_score(C)
         print("debug_3")
@@ -138,11 +133,12 @@ def GTL(state):
         siz = len(time_array)
         ans_array = []
         print("debug_4")
+        current_weight = calculate_weight(C)
 
         while time.time() - start < cnt:
             print("debug_5")
+            bests.append(calculate_weight(C))
             time_now = time.time() - start
-            current_weight = calculate_weight(C)
             previous_weight = current_weight
             while array_pointer < siz and time_array[array_pointer] <= time_now:
                 ans_array.append(current_weight)
@@ -155,30 +151,38 @@ def GTL(state):
 
             print("debug_6")
             previous = C
-            min_score = float('inf')
-            min_ind = 0
+            min_score = 2**100
+            min_ind = -1
             for i in range(V):
                 if C.vec[i] == 1 and min_score > score_matrix[i]:
                     min_score = score_matrix[i]
                     min_ind = i
-            C.vec[min_ind] = 0
+            
+            if min_ind != -1:
+                C.vec[min_ind] = 0
             
             print("debug_7")
 
             while not check_vertex_cover(C):
-                max_score = -1
-                max_ind = 0
+                max_score = -(2**100)
+                max_ind = -1
                 for i in range(V):
                     if C.vec[i] == 0 and max_score < score_matrix[i]:
                         max_score = score_matrix[i]
                         max_ind = i
                 C.vec[max_ind] = 1
                 add_weight(C)
-            if calculate_weight(C) > calculate_weight(previous):
-                C = previous
-            else:
-                score_matrix = calculate_score(C)
-        bests.append(calculate_weight(C))
+        
+            bests.append(calculate_weight(C))
+            
+            #if calculate_weight(C) > calculate_weight(previous):
+            #    C = previous
+            #else:   
+            score_matrix = calculate_score(C)
+            
+            bests.append(calculate_weight(C))
+            
+            current_weight = calculate_weight(C)
         
         for time_val, ans_val in zip(time_array, ans_array):
             print(f"{time_val}\t\t{ans_val}", file=open('output/GTL_result.txt','a'))

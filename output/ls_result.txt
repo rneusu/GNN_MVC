@@ -66,3 +66,436 @@
 2		24
 1		24
 2		24
+1		11
+2		11
+the result is: 11
+1		14
+2		14
+the result is: 14
+1		19
+2		19
+the result is: 19
+1		18
+2		18
+the result is: 18
+1		23
+2		23
+the result is: 23
+1		20
+2		20
+the result is: 20
+1		22
+2		22
+the result is: 22
+1		22
+2		22
+the result is: 22
+1		23
+2		23
+the result is: 23
+1		22
+2		22
+the result is: 22
+1		12
+2		12
+the result is: 12
+1		15
+2		15
+the result is: 15
+1		19
+2		19
+the result is: 19
+1		19
+2		19
+the result is: 19
+1		20
+2		20
+the result is: 20
+1		21
+2		21
+the result is: 21
+1		21
+2		21
+the result is: 21
+1		22
+2		22
+the result is: 22
+1		25
+2		25
+the result is: 25
+1		24
+2		24
+the result is: 24
+1		25
+2		25
+the result is: 25
+1		25
+2		25
+the result is: 25
+1		23
+2		23
+the result is: 23
+1		23
+2		23
+the result is: 23
+1		27
+2		27
+the result is: 27
+1		26
+2		26
+the result is: 26
+1		25
+2		25
+the result is: 25
+1		26
+2		26
+the result is: 26
+1		27
+2		27
+the result is: 27
+1		26
+2		26
+the result is: 26
+1		26
+2		26
+the result is: 26
+1		26
+2		26
+the result is: 26
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		26
+2		26
+the result is: 26
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		28
+2		28
+the result is: 28
+1		27
+2		27
+the result is: 27
+1		26
+2		26
+the result is: 26
+1		27
+2		27
+the result is: 27
+1		28
+2		28
+the result is: 28
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		28
+2		28
+the result is: 28
+1		28
+2		28
+the result is: 28
+1		28
+2		28
+the result is: 28
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+the result is: 27
+1		28
+2		28
+the result is: 28
+1		28
+2		28
+the result is: 28
+1		28
+2		28
+the result is: 28
+1		27
+2		27
+the result is: 27
+1		28
+2		28
+the result is: 28
+1		27
+2		27
+the result is: 27
+1		27
+2		27
+3		27
+4		27
+the result is: 27
+1		32
+2		32
+3		32
+4		32
+the result is: 32
+1		37
+2		37
+3		37
+4		37
+the result is: 37
+1		36
+2		36
+3		36
+4		36
+the result is: 36
+1		39
+2		39
+3		39
+4		39
+the result is: 39
+1		41
+2		41
+3		41
+4		41
+the result is: 41
+1		43
+2		43
+3		43
+4		43
+the result is: 43
+1		42
+2		42
+3		42
+4		42
+the result is: 42
+1		42
+2		42
+3		42
+4		42
+the result is: 42
+1		43
+2		43
+3		43
+4		43
+the result is: 43
+1		44
+2		44
+3		44
+4		44
+the result is: 44
+1		44
+2		44
+3		44
+4		44
+the result is: 44
+1		44
+2		44
+3		44
+4		44
+the result is: 44
+1		44
+2		44
+3		44
+4		44
+the result is: 44
+1		45
+2		45
+3		45
+4		45
+the result is: 45
+1		45
+2		45
+3		45
+4		45
+the result is: 45
+1		44
+2		44
+3		44
+4		44
+the result is: 44
+1		45
+2		45
+3		45
+4		45
+the result is: 45
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		45
+2		45
+3		45
+4		45
+the result is: 45
+1		45
+2		45
+3		45
+4		45
+the result is: 45
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		45
+2		45
+3		45
+4		45
+the result is: 45
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		48
+2		48
+3		48
+4		48
+the result is: 48
+1		48
+2		48
+3		48
+4		48
+the result is: 48
+1		46
+2		46
+3		46
+4		46
+the result is: 46
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+1		48
+2		48
+3		48
+4		48
+the result is: 48
+1		48
+2		48
+3		48
+4		48
+the result is: 48
+1		48
+2		48
+3		48
+4		48
+the result is: 48
+1		48
+2		48
+3		48
+4		48
+the result is: 48
+1		47
+2		47
+3		47
+4		47
+the result is: 47
+the result is: 988
+the result is: 992
+the result is: 992

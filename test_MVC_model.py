@@ -15,12 +15,11 @@ from copy import deepcopy as dc
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-from local_search import LOCALSEARCH
-from GTL import GTL
+from improved_local_search import GTL
 
 
 cuda_flag = False
-num_nodes = 30
+num_nodes = 1000
 p_edge = 0.05
 
 def f():
@@ -33,7 +32,7 @@ def f():
     else:
         NN = ACNet(ndim,264,1)
 
-    PATH = 'models/mvc_net_1000.pt'
+    PATH = 'models/mvc_net_100_1000.pt'
     NN.load_state_dict(torch.load(PATH))
 
     init_state,done = mvc.reset()
@@ -70,9 +69,6 @@ def f():
 
     result_GCN = -sum_r.item()
     print('GNN: {}'.format(result_GCN), file=open('output/test_result.txt','a'))
-
-    nx.draw(state.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
-    plt.savefig('figures/graph_GCN.png')
     #plt.show()
 
 
@@ -100,15 +96,13 @@ def f():
     node_tag = state_greedy.g.ndata['x'][:,0].cpu().squeeze().numpy().tolist()
     print('Heuristic: {}'.format(result_heuristic), file=open('output/test_result.txt','a'))
 
-    nx.draw(state_greedy.g.to_networkx(), pos, node_color=node_tag, with_labels=True)
-    plt.savefig('figures/graph_GCN.png')
     #plt.show()
 
     #print('Ratio: {}'.format((sum_r/sum_r2).item()))
 
     #Local Search ~~
 
-    result_local_search = LOCALSEARCH(state_greedy)
+    result_local_search = GTL(state_greedy)
     print('Local Search: {}'.format(min(result_local_search, result_heuristic)), file=open('output/test_result.txt','a'))
 
 
@@ -123,7 +117,11 @@ avg_Heuristic = 0
 avg_LocalSearch = 0
 avg_GTL = 0
 
-iterations = 10
+iterations = 3
+arr_GNN = []
+arr_Heuristic = []
+arr_LocalSearch = []
+arr_GTL = []
 
 for i in range(iterations):
     print(f'Iteration {i+1}/{iterations}', file=open('output/test_result.txt','a'))
@@ -132,14 +130,45 @@ for i in range(iterations):
     avg_Heuristic += b
     avg_LocalSearch += min(c, b)
     avg_GTL += min(d, a)
+    arr_GNN.append(a)
+    arr_Heuristic.append(b)
+    arr_LocalSearch.append(min(c, b))
+    arr_GTL.append(min(a, d))
 
 avg_GNN /= iterations
 avg_Heuristic /= iterations
 avg_LocalSearch /= iterations
 avg_GTL /= iterations
 
+S_GNN = 0
+S_Heuristic = 0
+S_LocalSearch = 0
+S_GTL = 0
+
+for x in arr_GNN:
+    S_GNN += (x - avg_GNN) ** 2
+for x in arr_Heuristic:
+    S_Heuristic += (x - avg_Heuristic) ** 2
+for x in arr_LocalSearch:
+    S_LocalSearch += (x - avg_LocalSearch) ** 2
+for x in arr_GTL:
+    S_GTL += (x - avg_GTL) ** 2
+
+S_GNN /= (len(arr_GNN) - 1)
+S_Heuristic /= (len(arr_Heuristic) - 1)
+S_LocalSearch /= (len(arr_LocalSearch) - 1)
+S_GTL /= (len(arr_GTL) - 1)
+
+S_GNN = S_GNN ** (0.5)
+S_Heuristic = S_Heuristic ** (0.5)
+S_LocalSearch = S_LocalSearch ** (0.5)
+S_GTL = S_GTL ** (0.5)
+
 print('Average GNN: {}'.format(avg_GNN), file=open('output/test_result.txt','a'))
 print('Average Heuristic: {}'.format(avg_Heuristic), file=open('output/test_result.txt','a'))
 print('Average Local Search: {}'.format(avg_LocalSearch), file=open('output/test_result.txt','a'))
 print('Average GTL: {}'.format(avg_GTL), file=open('output/test_result.txt','a'))
-
+print('STD GNN: {}'.format(S_GNN), file=open('output/test_result.txt','a'))
+print('STD Heuristic: {}'.format(S_Heuristic), file=open('output/test_result.txt','a'))
+print('STD Local Search: {}'.format(S_LocalSearch), file=open('output/test_result.txt','a'))
+print('STD GTL: {}'.format(S_GTL), file=open('output/test_result.txt','a'))
